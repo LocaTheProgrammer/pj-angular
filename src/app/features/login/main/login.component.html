@@ -1,44 +1,24 @@
 
 
-<div class="parent">
+
+
+
+<div class="container">
+    <h1>Login</h1>
     <form [formGroup]="loginForm" (ngSubmit)="eseguiLoginUtente()">
-        <div class="div1"><h1>Login</h1></div>
-        <div class="div2"><input type="text" name="email" id="email" placeholder="email" formControlName="email"> </div>
-        <div class="div3"> <input type="password" name="password" id="password" placeholder="password" formControlName="password"> </div>
-        <div class="div4"><button type="submit">LOGIN</button> </div>
+        <div class="wrapper">
+            <div class="group">
+                <input class="fields" type="text" name="email" id="email" placeholder="email" formControlName="email">
+            </div>
+      
+        </div>
+
+        <div class="wrapper">
+        
+            <div class="group">
+                <input class="fields" type="password" name="password" id="password" placeholder="password" formControlName="password">
+            </div>
+        </div>
+        <button id="submitButton" class="button" type="submit">LOGIN</button>
     </form>
 </div>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<body>
-    <div class="wrapper">
-        <div class="sct brand"><h3>YOUR LOGO</h3></div>
-        <div class="sct login">
-            <form>
-                <h3>Member Login</h3>
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <div class="forgot-remember">
-                        <label class="control control-checkbox">
-                                Remember me
-                                    <input type="checkbox" />
-                                <div class="control_indicator"></div>
-                            </label>
-                    <div class="forgot">
-                            <a href="#">Forgot Password?</a>
-                    </div> 
-                </div>
-                <input type="submit" name="send" value="Send">
-                <p class="text-center">Sign up with<br><i class="fa fa-hand-o-down" aria-hidden="true"></i></p>
-                <div class="social-sign">
-                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                </div>
-            </form>
-        </div> <!--end login-->
-    </div> <!--end wrapper-->
-</body>
-</html>
