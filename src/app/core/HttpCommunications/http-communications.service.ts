@@ -7,7 +7,7 @@ import { HttpClient, HttpEvent, HttpEventType, HttpParams, HttpRequest, HttpResp
 )
 export class HttpCommunicationsService {
 
-  private host = 'http://localhost:8090/gestionalelsg/rest/';
+  private host = 'http://localhost:8090/pj/rest/';
 
   constructor(private httpClient: HttpClient) {
   }

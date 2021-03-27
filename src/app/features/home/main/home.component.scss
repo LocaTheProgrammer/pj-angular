@@ -1,0 +1,112 @@
+@media (min-width: 575px){
+
+    .container{
+        max-width:100%;
+       height:auto;
+    }
+    .banner{
+        width:100%;
+        
+      
+        // background-repeat:no-repeat;
+        // background-size:cover;
+        // background-attachment:fixed;
+         display:flex;
+         align-items:center;
+         justify-content:center;
+        }
+        
+        .banner section,.banner a{
+        color:#fff;
+        margin:0 10px;
+        }
+        
+    
+    .logo{
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+    }
+    .cartString{
+        padding-left: 21%;
+        margin-top: -15%;
+        
+    }
+    
+    a{
+        text-decoration:none;
+        color: black;
+    }
+   
+    
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .div1 { grid-area: 1 / 2 / 2 / 4;
+                //padding-left: -15%;
+                margin-left: 33%;
+             }
+        .div2 { grid-area: 1 / 5 / 2 / 6;
+            margin-top: 15%;
+            padding-top: 5%;
+            margin-left: 22%;
+            
+            
+            
+        background-color: #70ADCC;
+        border-radius: 4%;
+}
+
+
+
+    .cardparent {
+        padding-left: 5%;
+        padding-top: 7%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .carddiv1 { grid-area: 2 / 2 / 3 / 3; }
+        .carddiv2 { grid-area: 2 / 3 / 3 / 4; }
+        .carddiv3 { grid-area: 2 / 4 / 3 / 5; }
+        .carddiv4 { grid-area: 2 / 5 / 3 / 6; }
+
+        .card{
+            width:300px;
+            background:#fff;
+            height:450px; 
+            margin:90px auto;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+          -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+          -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            
+          }
+          .card img{
+            width:100%;
+          }
+          .floatRight{
+            float:right
+          }
+          .cardInfo{
+            padding:10px;
+          }
+          svg{
+          padding:5px;
+          margin:10px 10px 0px 10px;
+           cursor:pointer;
+          }
+          .bottomStripe{
+            width:100%;
+            height:5px;
+           background:#000;  
+          }
+
+}

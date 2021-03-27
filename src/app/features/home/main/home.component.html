@@ -1,0 +1,36 @@
+<!--BANNER-->
+<div class="container">
+    
+   
+            <div class="parent">
+                <div class="div1"><img class="logo" src="../assets/logokarasho.jpeg" alt=""> </div>
+                <div class="div2"> <a href="cart"><img class="cart" src="../assets/cartbig.png" alt=""><h1 class="cartString">CARRELLO</h1></a> </div>
+            </div>
+            
+            <hr>
+
+            <!-- <div class="cardparent" *ngFor="let art of articoliHot; let i = index"> 
+                <div class="carddiv1">{{art.foto}}</div>
+                <div class="carddiv2"> {{art.foto}}</div>
+                <div class="carddiv3"> {{art.foto}}</div>
+                <div class="carddiv3"> {{art.foto}}</div>
+            </div> -->
+            <table class="table table-hover" id="table-prod">
+                <thead>
+                    <tr>
+                        <th scope="col">foto</th>
+                       
+                        <th scope="col" id="th-btn">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let art of articoliHot | async ">
+                        <td> <img src="{{art.foto}}" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+               
+</div>
+
