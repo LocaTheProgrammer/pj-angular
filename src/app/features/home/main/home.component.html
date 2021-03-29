@@ -4,33 +4,33 @@
    
             <div class="parent">
                 <div class="div1"><img class="logo" src="../assets/logokarasho.jpeg" alt=""> </div>
-                <div class="div2"> <a href="cart"><img class="cart" src="../assets/cartbig.png" alt=""><h1 class="cartString">CARRELLO</h1></a> </div>
+                <div class="div2"> <a href="cart"><img class="cart" src="../assets/cartbig.png" alt=""></a> </div>
             </div>
             
             <hr>
 
-            <!-- <div class="cardparent" *ngFor="let art of articoliHot; let i = index"> 
-                <div class="carddiv1">{{art.foto}}</div>
-                <div class="carddiv2"> {{art.foto}}</div>
-                <div class="carddiv3"> {{art.foto}}</div>
-                <div class="carddiv3"> {{art.foto}}</div>
-            </div> -->
-            <table class="table table-hover" id="table-prod">
-                <thead>
-                    <tr>
-                        <th scope="col">foto</th>
-                       
-                        <th scope="col" id="th-btn">&nbsp;</th>
-                    </tr>
-                </thead>
+
+            <nav>
+                <h1>KARASHO</h1>
+                <ul>
+                  <li><a data-text="Login" href="login">Login</a></li>
+                  <li><a data-text="Donna" href="#">Donna</a></li>
+                  <li><a data-text="Uomo" href="#">Uomo</a></li>
+                  <li><a data-text="Contattami" href="#">Contattami</a></li>
+                </ul>
+              </nav>
+
+            <table class="hot_prods_table">  
+               
                 <tbody>
-                    <tr *ngFor="let art of articoliHot | async ">
-                        <td> <img src="{{art.foto}}" alt=""></td>
+                    <tr>
+                        <td *ngFor="let art of articoli | async" > <img class="hot_prod" *ngIf="art.hot=='si'" class="previewHotProd" src="{{art.foto}}" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td *ngFor="let art of articoli | async" ><button *ngIf="art.hot=='si'" class="buttonScopri" routerLink="">SCOPRI</button></td>
                     </tr>
                 </tbody>
             </table>
 
             
-               
 </div>
-

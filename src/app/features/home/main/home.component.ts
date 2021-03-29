@@ -12,21 +12,28 @@ import { HomeService } from '../service/home.service';
 })
 export class HomeComponent implements OnInit {
 
+
+  hotArt=[]
   constructor(private store: Store, private homeService: HomeService) {
-    //this.homeService.retrieveAllArticolos();
+    this.homeService.retrieveAllArticolos();
     this.homeService.retrieveAllHot();
    }
 
   
   ngOnInit(): void {
+    
+
   }
 
-  // get articoli(): Observable<Articolo[]> {
-  //   return this.store.pipe(select(selectArticolos));
+   get articoli(): Observable<Articolo[]> {
+     return this.store.pipe(select(selectArticolos));
     
-  // }
+   }
 
   get articoliHot(): Observable<Articolo[]> {
+    // console.log(this.store.pipe(select(selectArticolosHot)).subscribe(articoliHot=> {
+    //   this.hotArt=articoliHot
+    // }));
     return this.store.pipe(select(selectArticolosHot));
     
   }

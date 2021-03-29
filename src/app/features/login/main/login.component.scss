@@ -107,4 +107,30 @@ textarea:focus ~ .bar:before {
    height:auto;
     padding-left: 40%;
     padding-right: 40%;
-}}
+}
+
+.banner {
+  width: 100%;
+  // background-repeat:no-repeat;
+  // background-size:cover;
+  // background-attachment:fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner section,
+.banner a {
+  color: #fff;
+  margin: 0 10px;
+}
+.logo {
+  margin-left: 36%;
+  width: 30%;
+  height: 150px;
+  overflow: hidden;
+}
+.back_home{
+  margin-top: 30%;
+  margin-left: 34%;
+}
+}

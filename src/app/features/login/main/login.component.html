@@ -1,9 +1,17 @@
 
 
+  <div class="parent">
+    <div class="div1"><img class="logo" src="../assets/logokarasho.jpeg" alt=""> </div>
+   
+</div>
 
+<hr>
 
 
 <div class="container">
+       
+  
+
     <h1>Login</h1>
     <form [formGroup]="loginForm" (ngSubmit)="eseguiLoginUtente()">
         <div class="wrapper">
@@ -20,5 +28,7 @@
             </div>
         </div>
         <button id="submitButton" class="button" type="submit">LOGIN</button>
+       
     </form>
+    <a class="back_home" href="home">Torna alla Home</a>
 </div>
