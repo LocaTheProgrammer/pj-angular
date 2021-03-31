@@ -4,4 +4,5 @@ export interface Articolo{
     descrizione:string;
     prezzo:number;
     foto:string;
+    genere:string;
 }

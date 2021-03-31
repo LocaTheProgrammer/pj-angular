@@ -1,0 +1,32 @@
+<!--BANNER-->
+<div class="container">
+    
+   
+    <div class="parent">
+        <div class="div1"><img class="logo" src="../assets/logokarasho.jpeg" alt=""> </div>
+        <div class="div2"> <a href="cart"><img class="cart" src="../assets/cartbig.png" alt=""></a> </div>
+    </div>
+    
+    <hr>
+
+
+    <nav>
+        <h1>KARASHO</h1>
+        <ul>
+          <li><a data-text="Login" href="login">Login</a></li>
+          <li><a data-text="Home" href="home">Home</a></li>
+          <li><a data-text="Uomo" href="#">Uomo</a></li>
+          <li><a data-text="Contattami" href="#">Contattami</a></li>
+        </ul>
+      </nav>
+
+    <div class="hot_prods_table" *ngFor="let art of articoli | async">  
+       <div  *ngIf="art.genere=='donna'">
+        <img class="hot_prod" class="previewHotProd" src="{{art.foto}}" alt="">
+        
+       </div>
+       
+    </div>
+
+    
+</div>

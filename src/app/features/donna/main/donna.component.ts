@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Articolo } from 'src/app/core/model/Articolo.interface';
 import { selectArticolos, selectArticolosHot } from 'src/app/redux/articolo';
-import { HomeService } from '../service/home.service';
+import { HomeService } from '../../home/service/home.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-donna',
+  templateUrl: './donna.component.html',
+  styleUrls: ['./donna.component.scss']
 })
-export class HomeComponent implements OnInit {
-
+export class DonnaComponent implements OnInit {
 
   hotArt=[]
   constructor(private store: Store, private homeService: HomeService) {
@@ -19,7 +18,15 @@ export class HomeComponent implements OnInit {
     this.homeService.retrieveAllHot();
    }
 
-  ngOnInit(): void {
+   
+   delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  
+  async ngOnInit() {
+    await this.delay(10000000)
+    
 
   }
 
@@ -38,5 +45,4 @@ export class HomeComponent implements OnInit {
 
  
 
-  
 }
