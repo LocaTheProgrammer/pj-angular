@@ -14,18 +14,18 @@
         <h1>KARASHO</h1>
         <ul>
           <li><a data-text="Login" href="login">Login</a></li>
+          <li><a data-text="Donna" href="donna">Donna</a></li>
           <li><a data-text="Home" href="home">Home</a></li>
-          <li><a data-text="Uomo" href="uomo">Uomo</a></li>
           <li><a data-text="Contattami" href="contattami">Contattami</a></li>
         </ul>
     </nav>
     <!-- class="hot_prods_table" -->
     <div class="grid">
       <ng-container *ngFor="let art of articoli | async" >
-          <ng-container *ngIf="art.genere=='donna'" >
+          <ng-container *ngIf="art.genere=='uomo'" >
                 <div class="hot_prods_table">
                     <img class="hot_prod" class="previewHotProd" src="{{art.foto}}" alt=""> <br>
-                    <span  class="nome text-center"><h3>{{art.nome}}</h3></span><br>
+                    <span class="nome text-center"><h3>{{art.nome}}</h3></span><br>
                     <button class="buttonScopri" routerLink="">SCOPRI</button>
                 </div>
           </ng-container>
