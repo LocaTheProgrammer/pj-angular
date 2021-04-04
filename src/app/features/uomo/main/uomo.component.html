@@ -4,7 +4,15 @@
    
     <div class="parent">
         <div class="div1"><a href="home"><img class="logo" src="../assets/logokarasho.jpeg" alt=""></a></div>
-        <div class="div2"> <a href="cart"><img class="cart" src="../assets/cartbig.png" alt=""></a> </div>
+       
+        <div class="div2">  
+                <table>
+                    <tr>
+                        <td class="sessionEmail"> <span >{{sessionEmail}}</span></td>
+                        <td><a href="cart"><img class="cart" src="../assets/cartbig.png" alt=""></a></td>
+                    </tr>
+                </table>
+            </div>
     </div>
     
     <hr>
@@ -26,7 +34,7 @@
                 <div class="hot_prods_table">
                     <img class="hot_prod" class="previewHotProd" src="{{art.foto}}" alt=""> <br>
                     <span class="nome text-center"><h3>{{art.nome}}</h3></span><br>
-                    <button class="buttonScopri" routerLink="">SCOPRI</button>
+                    <button *ngIf="art.genere=='uomo'" class="buttonScopri" (click)="scopri(art.id)">SCOPRI</button>
                 </div>
           </ng-container>
       </ng-container>    

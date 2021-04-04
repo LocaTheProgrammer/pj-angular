@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Articolo } from 'src/app/core/model/Articolo.interface';
@@ -13,17 +14,16 @@ import { HomeService } from '../../home/service/home.service';
 export class UomoComponent implements OnInit {
 
   hotArt=[]
-  constructor(private store: Store, private homeService: HomeService) {
+  constructor(private store: Store, private homeService: HomeService,private router: Router) {
     this.homeService.retrieveAllArticolos();
 
    }
 
    
  
-   ngOnInit():void  {
-  
-    
-
+  sessionEmail:any
+  ngOnInit(): void {
+    this.sessionEmail=sessionStorage.getItem('email')
   }
 
    get articoli(): Observable<Articolo[]> {
@@ -31,6 +31,12 @@ export class UomoComponent implements OnInit {
     
    }
 
+   redirect:string
+   scopri(id:number){
+     console.log(id)
+     this.redirect="/dettaglio?id="+id;
+     this.router.navigateByUrl(this.redirect)
+   }
  
 
 

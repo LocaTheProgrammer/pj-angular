@@ -38,7 +38,7 @@
                         <td *ngFor="let art of articoli | async" >  <span *ngIf="art.hot=='si'" class="nome text-center"><h3>{{art.nome}}</h3></span></td>
                     </tr>
                     <tr>
-                        <td *ngFor="let art of articoli | async" ><button *ngIf="art.hot=='si'" class="buttonScopri" routerLink="">SCOPRI</button></td>
+                        <td *ngFor="let art of articoli | async" ><button *ngIf="art.hot=='si'" class="buttonScopri" (click)="scopri(art.id)">SCOPRI</button></td>
                     </tr>
                 </tbody>
             </table>

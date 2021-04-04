@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Articolo } from 'src/app/core/model/Articolo.interface';
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
 
 
   hotArt=[]
-  constructor(private store: Store, private homeService: HomeService) {
+  constructor(private store: Store, private homeService: HomeService,private router: Router) {
     this.homeService.retrieveAllArticolos();
     this.homeService.retrieveAllHot();
    }
@@ -35,6 +36,13 @@ export class HomeComponent implements OnInit {
     // }));
     return this.store.pipe(select(selectArticolosHot));
     
+  }
+  
+  redirect:string
+  scopri(id:number){
+    console.log(id)
+    this.redirect="/dettaglio?id="+id;
+    this.router.navigateByUrl(this.redirect)
   }
 
  

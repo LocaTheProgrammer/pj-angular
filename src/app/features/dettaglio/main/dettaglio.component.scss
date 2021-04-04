@@ -65,7 +65,7 @@ $button-border-color: #223e5f;
 		background: #000;
 	}
 	.previewHotProd {
-		width: 50%;
+		width: 70%;
 		padding: 15px;
 		background-color: #70ADCC;
 	
@@ -91,7 +91,8 @@ $button-border-color: #223e5f;
 	.buttonScopri{
 		
 		display: inline-block;
-		padding: 15px;
+		padding-left: 11%;
+        padding-right: 11%;
 		margin-right: 5px;
 		height: 50px;
 		min-width: 100px;
@@ -188,8 +189,9 @@ $button-border-color: #223e5f;
 
     //css
     .grid {
-        margin-top: 7% ;
+        margin-top: 1% ;
         display: grid;
+        margin-left: 7.8%;
         grid-template-columns: 33% 33% 33%;
         gap: 10px;
         // grid-auto-rows: 100px;
@@ -207,5 +209,23 @@ $button-border-color: #223e5f;
 		font-style:italic;
 		
 	}
-	
+
+    //select
+    .selectTaglia{
+        margin-top: 6%;
+        width: 22.3%;
+    }
+
+    .tagliaString{
+        margin-top: 6%;
+        color: white;
+        font-style: bold;
+        padding-right: 12%;
+    }
+	.divTaglie{
+        padding-top: 6%;
+    }
+    #quantita{
+        margin-left: -2.3%;
+    }
 }
