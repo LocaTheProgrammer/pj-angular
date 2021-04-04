@@ -7,7 +7,8 @@ const routes: Routes = [{ path: 'login', loadChildren: () => import('./features/
                         { path: 'donna', loadChildren: () => import('./features/donna/donna.module').then(m => m.DonnaModule) },
                         { path: 'uomo', loadChildren: () => import('./features/uomo/uomo.module').then(m => m.UomoModule) },
                         { path: 'signup', loadChildren: () => import('./features/signup/signup.module').then(m => m.SignupModule) },
-                        { path: 'dettaglio', loadChildren: () => import('./features/dettaglio/dettaglio.module').then(m => m.DettaglioModule) }];
+                        { path: 'dettaglio', loadChildren: () => import('./features/dettaglio/dettaglio.module').then(m => m.DettaglioModule) },
+                        { path: 'cart', loadChildren: () => import('./features/carrello/carrello.module').then(m => m.CarrelloModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
