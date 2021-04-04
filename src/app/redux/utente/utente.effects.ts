@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Observable } from "rxjs";
 import { switchMap, map, tap } from "rxjs/operators";
 import { HttpCommunicationsService } from "src/app/core/HttpCommunications/http-communications.service";
-import { createUtente, deleteUtente, initUtentes, retreiveAllUtentes, updateUtente } from "./utente.actions";
+import { createUtente, deleteUtente, initUtente, initUtentes, loginUtente, loginUtenteFailure, loginUtenteSuccess, retreiveAllUtentes, updateUtente } from "./utente.actions";
 import { Response } from '../../core/model/Response.interface';
 import { Action } from "@ngrx/store";
 
@@ -76,4 +76,35 @@ export class UtenteEffects {
             ,tap(()=>this.router.navigateByUrl('/redirectutente'))
         ))
     ));
+
+
+    signInUtente(email: string, password: string): Observable<Response> {
+        return this.http.retrievePostCall<Response>('utente/logIn', {email, password});
+      }
+      
+      
+        
+      loginUtente$=createEffect(()=>this.actions$.pipe(
+        ofType(loginUtente),
+        switchMap(action => this.signInUtente(action.email, action.password).pipe(
+            map( response=>{
+              if(response.result === null){
+                  console.log('Utente e/o Password non corretta')
+                return loginUtenteFailure({error:'Utente e/o Password non corretta'})
+              }else{
+                sessionStorage.setItem('email',action.email)
+                sessionStorage.setItem('id',response.result.id)
+                return loginUtenteSuccess({user: response.result})
+              }
+            })
+          ))
+        ));
+    
+      loginUtenteSuccess$=createEffect(()=>this.actions$.pipe(
+        ofType(loginUtenteSuccess),
+        map( (action) => initUtente( {user: action.user} )),
+        tap(()=>this.router.navigateByUrl('/home'))
+      ));
+  
+  
 }

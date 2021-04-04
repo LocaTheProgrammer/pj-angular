@@ -1,1 +1,43 @@
-<p>signup works!</p>
+
+
+  <div class="parent">
+    <div class="div1"><a href="home"><img class="logo" src="../assets/logokarasho.jpeg" alt=""></a></div>
+   
+</div>
+
+<hr>
+
+
+<div class="container">
+       
+  
+
+    <h1>Registrati</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="eseguiSignUpUtente()">
+        <div class="wrapper">
+            <div class="group">
+                <input class="fields" type="text" name="nome" id="nome" placeholder="Nome" formControlName="nome">
+            </div>
+            <div class="group">
+                <input class="fields" type="text" name="Cognome" id="Cognome" placeholder="Cognome" formControlName="cognome">
+            </div>
+            <div class="group">
+                <input class="fields" type="date" name="Data di Nascita" id="dataNascita" placeholder="" formControlName="data">
+            </div>
+            <div class="group">
+                <input class="fields" type="text" name="email" id="email" placeholder="email" formControlName="email">
+            </div>
+      
+        </div>
+
+        <div class="wrapper">
+        
+            <div class="group">
+                <input class="fields" type="password" name="password" id="password" placeholder="password" formControlName="password">
+            </div>
+        </div>
+        <button id="submitButton" class="button" type="submit">LOGIN</button>
+       
+    </form>
+    <a class="back_home" href="home">Torna alla Home</a>
+</div>

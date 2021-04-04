@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup
 
   //constructor(private store: Store, private router: Router, private LoginService: LoginService, ) { }
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private loginService:LoginService){}
   ngOnInit(): void {
     this.loginForm=this.fb.group({
       email: ['', Validators.required],
@@ -22,8 +22,6 @@ export class LoginComponent implements OnInit {
     })
   }
   eseguiLoginUtente(){
-    console.log("login utente")
-    console.log("email: ", this.loginForm.value.email)
-    console.log("password: ", this.loginForm.value.password)
+    this.loginService.executeLogin(this.loginForm.value.email,this.loginForm.value.password)
   }
 }

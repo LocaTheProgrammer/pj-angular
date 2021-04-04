@@ -50,9 +50,9 @@ $button-border-color: #223e5f;
 	}
 	.div2 {
 		grid-area: 1 / 5 / 2 / 6;
-		margin-top: 8%;
-		padding-top: 3%;
-		margin-left:65%;
+		margin-top: 6%;
+		padding-top: 6%;
+		margin-left:30%;
 		//background-color: #70ADCC;
 		border-radius: 4%;
 		margin-right: 25%;
@@ -187,6 +187,11 @@ $button-border-color: #223e5f;
         color: white;
         padding: 1%;
     }
+	.sessionEmail{
+		color: white;
+		font-style:italic;
+		
+	}
 	
 	
 }

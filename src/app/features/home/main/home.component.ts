@@ -19,8 +19,9 @@ export class HomeComponent implements OnInit {
     this.homeService.retrieveAllHot();
    }
 
+  sessionEmail:any
   ngOnInit(): void {
-
+    this.sessionEmail=sessionStorage.getItem('email')
   }
 
    get articoli(): Observable<Articolo[]> {

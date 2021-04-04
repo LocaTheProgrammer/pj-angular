@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+import { Utente } from "src/app/core/model/Utente.interface";
 import { Response } from '../../core/model/Response.interface';
 
 export const initUtentes = createAction('[Utente] init Utentes', props<{response: Response}>());
@@ -6,3 +7,9 @@ export const deleteUtente = createAction('[Utente] delete Utente',props<{id: str
 export const updateUtente = createAction('[Utente] find-update', props<{id:string, ragioneSociale:string, partitaIva:string, email:string, sede: string, residenza: string, name:string}>())
 export const createUtente = createAction('[Utente] creazione Utente', props<{email:string, ragioneSociale:string, partitaIva:string,sede:string,residenza:string,name:string}>());
 export const retreiveAllUtentes = createAction('[Utente] Utente');
+
+export const loginUtente = createAction('[Utente] login', props<{email: string, password: string}>());
+export const initUtente = createAction('[UtenteInit] init', props<{user: Utente}>());
+export const loginUtenteSuccess = createAction('[Utente] Login Success', props<{user: Utente}>());
+export const loginUtenteFailure = createAction('[Utente] Login Failure', props<{error: string}>());
+
