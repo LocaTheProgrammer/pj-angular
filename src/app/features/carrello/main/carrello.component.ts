@@ -16,10 +16,10 @@ import { CarrelloService } from '../service/carrello.service';
 })
 export class CarrelloComponent implements OnInit {
 
-  constructor(private store: Store, private carrelloService: CarrelloService,private router: Router,private http: HttpCommunicationsService) {
+  constructor(private store: Store, private carrelloService: CarrelloService,private router: Router) {
 
     this.carrelloService.retrieveAllCarrelli()
-    this.carrelloService.retrieveTotale()
+    //this.carrelloService.retrieveTotale()
   }
 
 
@@ -37,10 +37,9 @@ export class CarrelloComponent implements OnInit {
    
   }
 
-  get carrelloTotale(): Observable<CarrelloTotale[]>{
-
-    return this.store.pipe(select(selectCarrelloTotales));
-  }
+  // get carrelloTotale(): Observable<CarrelloTotale[]>{
+  //   return this.store.pipe(select(selectCarrelloTotales));
+  // }
 
   
 

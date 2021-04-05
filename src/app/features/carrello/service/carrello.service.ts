@@ -13,7 +13,7 @@ export class CarrelloService {
   retrieveAllCarrelli(){
     this.store.dispatch(retrieveAllCarrellos())
   }
-  retrieveTotale(){
-    this.store.dispatch(retrieveTotale())
-  }
+  // retrieveTotale(){
+  //   this.store.dispatch(retrieveTotale())
+  // }
 }

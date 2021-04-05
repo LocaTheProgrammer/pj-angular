@@ -22,6 +22,7 @@ export class CarrelloTotalesEffects {
   
 
     retreiveAllCarrello(): Observable<Response> {
+        console.log("find totale carrello tot")
         return this.http.retrieveGetCall<Response>("carrelloTotale/findTotale");
     }
 
