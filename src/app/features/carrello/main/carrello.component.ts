@@ -16,13 +16,15 @@ export class CarrelloComponent implements OnInit {
   constructor(private store: Store, private carrelloService: CarrelloService,private router: Router) {
 
     this.carrelloService.retrieveAllCarrelli()
+    this.carrelloService.retrieveTotale()
   }
 
 
 
-  sessionEmail:any
+  sessionEmail:string
   ngOnInit(): void {
     this.sessionEmail=sessionStorage.getItem('email')
+    console.log("email di sessione: ",this.sessionEmail)
   }
 
   get carrelli(): Observable<Carrello[]> {

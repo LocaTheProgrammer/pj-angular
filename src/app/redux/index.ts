@@ -4,6 +4,7 @@ import { utentesReducer, UtenteState } from './utente/utente.reducers';
 
 import { ArticoloHotState, articolosHotReducer, articolosReducer, ArticoloState } from './articolo/product.reducers';
 import { carrelloReducer, CarrelloState } from './carrello/carrello.reducers';
+import { carrelloTotaleReducer, CarrelloTotaleState } from './totale/totale.reducers';
 
 
 
@@ -13,6 +14,7 @@ export interface AppState{
     router: RouterReducerState<any>;
     utenteState: UtenteState
     carrelloState:CarrelloState;
+    carrelloTotaleState:CarrelloTotaleState;
    
 }
 
@@ -21,7 +23,8 @@ export const reducers: ActionReducerMap<AppState> = {
     articolosHotState:articolosHotReducer,
     utenteState: utentesReducer,
     articolosState:articolosReducer,
-    carrelloState:carrelloReducer
+    carrelloState:carrelloReducer,
+    carrelloTotaleState:carrelloTotaleReducer
     
    
 }

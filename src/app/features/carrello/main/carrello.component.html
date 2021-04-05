@@ -29,14 +29,22 @@
     </nav>
     <!-- class="hot_prods_table" -->
    
-    <table>
+    <h1 class="riepilogo">Riepilogo Acquisti</h1>
+   <hr class="lineRiepilogo">
+    <table class="carrelloPreview">
+        <th id="imgtitle">IMMAGINE</th>
+        <th>NOME</th>
+        <th>PREZZO</th>
         <tr *ngFor="let car of carrelli | async">
-            <td *ngIf="car.email=='sessionEmail'"> <img src="{{car.foto}}"> </td>
-            <td *ngIf="car.email=='sessionEmail'">{{car.nome}}</td>
-            <td *ngIf="car.email=='sessionEmail'">{{car.prezzo}}</td>
+            
+            <td *ngIf="car.emailUtente==sessionEmail" class="immagine"> <img class="previewHotProd" src="{{car.foto}}"> </td>
+            <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.nome}}</td>
+            <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.quantita}} x {{car.prezzo}} €</td>
+        
+           
         </tr>
     </table>
-   
+   {{totale}}
 
     
 </div>

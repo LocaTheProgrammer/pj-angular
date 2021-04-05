@@ -65,8 +65,12 @@ $button-border-color: #223e5f;
 		background: #000;
 	}
 	.previewHotProd {
-		width: 70%;
+		width: 15%;
+		margin-left: 12.5%;
+		margin-top: 5%;
+		margin-bottom: -3%;
 		padding: 15px;
+		
 		background-color: #70ADCC;
 	
 	}
@@ -228,4 +232,32 @@ $button-border-color: #223e5f;
     #quantita{
         margin-left: -2.3%;
     }
+	.detail{
+		text-align: center;
+		color: white;
+		font-weight: bold;
+		width:30%
+	}
+	.immagine{
+		padding-left: 12.5%;
+		width:30%
+	}
+	.carrelloPreview{
+		margin-top: 5%;
+	}
+	th{
+		color: white;
+		font-size: x-large;
+	}
+	.riepilogo{
+		color: white;
+		margin-top: 2%;
+		margin-left: 10%;
+	}
+	.lineRiepilogo{
+		width: 14%;
+		margin-left: 10%;
+	}
+	
+
 }

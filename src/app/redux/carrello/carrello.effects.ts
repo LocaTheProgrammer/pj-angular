@@ -8,7 +8,7 @@ import { switchMap, map, tap } from 'rxjs/operators';
 import { HttpCommunicationsService } from "src/app/core/HttpCommunications/http-communications.service";
 
 import { Response } from '../../core/model/Response.interface';
-import { deleteCarrello, initCarrellos, retrieveAllCarrellos, createCarrello } from "./carrello.actions";
+import { deleteCarrello, initCarrellos, retrieveAllCarrellos, createCarrello, retrieveTotale } from "./carrello.actions";
 
 
 
@@ -20,6 +20,10 @@ export class CarrellosEffects {
 
     retreiveAllCarrello(): Observable<Response> {
         return this.http.retrieveGetCall<Response>("carrello/findAll");
+    }
+
+    retreiveTotale(): Observable<Response> {
+        return this.http.retrieveGetCall<Response>("carrelloTotale/findTotale");
     }
 
 
@@ -49,6 +53,14 @@ export class CarrellosEffects {
             map((response) => initCarrellos({ response }))
         ))
     ));
+    
+    getTotlae$: Observable<Action> = createEffect(() => this.actions$.pipe(
+        ofType(retrieveTotale),
+        switchMap(() => this.retreiveAllCarrello().pipe(
+            map((response) => initCarrellos({ response }))
+        ))
+    ));
+
 
 
        
@@ -63,7 +75,7 @@ export class CarrellosEffects {
             action.taglia,
             action.quantita).pipe(
             map((response) => initCarrellos({ response })),
-            tap(()=>this.router.navigateByUrl('/home'))
+            tap(()=>this.router.navigateByUrl('/cart'))
         ))
     ));
 
