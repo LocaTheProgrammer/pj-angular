@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Articolo } from 'src/app/core/model/Articolo.interface';
 import { selectArticolos } from 'src/app/redux/articolo';
 import { HomeService } from '../../home/service/home.service';
+import { DettaglioServiceService } from '../service/dettaglio-service.service';
 
 @Component({
   selector: 'app-dettaglio',
@@ -14,7 +15,7 @@ import { HomeService } from '../../home/service/home.service';
 })
 export class DettaglioComponent implements OnInit {
 
-  constructor(private store: Store, private fb:FormBuilder, private route: ActivatedRoute,private homeService: HomeService) { }
+  constructor(private store: Store, private fb:FormBuilder, private route: ActivatedRoute,private homeService: HomeService,private dettaglioService:DettaglioServiceService) { }
   id:string
   sessionEmail:any
 
@@ -46,6 +47,7 @@ export class DettaglioComponent implements OnInit {
     console.log("taglia: ",this.aggiungiAlCarrelloForm.value.taglia)
     console.log("quantita: ",this.aggiungiAlCarrelloForm.value.quantita)
     
+    this.dettaglioService.aggiungiAlCarrello(this.sessionEmail,this.id,this.aggiungiAlCarrelloForm.value.taglia,this.aggiungiAlCarrelloForm.value.quantita)
   }
 
 

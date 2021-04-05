@@ -8,11 +8,11 @@ import { carrelloReducer, CarrelloState } from './carrello/carrello.reducers';
 
 
 export interface AppState{
-    carrelloState:CarrelloState
     articolosState: ArticoloState;
     articolosHotState: ArticoloHotState;
     router: RouterReducerState<any>;
     utenteState: UtenteState
+    carrelloState:CarrelloState;
    
 }
 

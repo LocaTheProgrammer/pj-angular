@@ -10,10 +10,6 @@ export interface CarrelloState {
 }
 
 
-
-
-
-
 export const initialState: CarrelloState = {
     carrello: [],   
 };

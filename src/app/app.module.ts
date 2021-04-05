@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { reducers } from './redux';
 import { ArticolosEffects } from './redux/articolo/product.effects';
+import { CarrellosEffects } from './redux/carrello/carrello.effects';
 import { UtenteEffects } from './redux/utente/utente.effects';
 import { SharedModule } from './shared/shared.module';
 
@@ -28,7 +29,8 @@ import { SharedModule } from './shared/shared.module';
     StoreModule.forRoot(reducers),
      EffectsModule.forRoot([
       ArticolosEffects,
-      UtenteEffects
+      UtenteEffects,
+      CarrellosEffects
      ]
      ),
   ],

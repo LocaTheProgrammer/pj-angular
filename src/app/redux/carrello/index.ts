@@ -16,7 +16,7 @@ export const selectCarrellos = createSelector(
 
 
 
-export const getCurrentCarrello = createSelector(
-    selectCarrelloState,
-    (state: CarrelloState, params: Params) => state.carrello.find(item => item.id === Number(params['id']))
-);
+// export const getCurrentCarrello = createSelector(
+//     selectCarrelloState,
+//     (state: CarrelloState, params: Params) => state.carrello.find(item => item.id === Number(params['id']))
+// );

@@ -9,7 +9,14 @@ export class DettaglioServiceService {
 
   constructor(private store:Store) { }
 
-  aggiungiAlCarrello(email:string, idArticolo:string, taglia:string, quantita:number){
-    this.store.dispatch(createCarrello({email, idArticolo,taglia,quantita}))
+  aggiungiAlCarrello(emailUtente:string, idArticolo:string, taglia:string, quantita:number){
+    console.log("dettaglio service")
+    console.log("sessionEmail: ", emailUtente)
+    console.log("taglia: ",taglia)
+    console.log("quantita: ",quantita)
+    console.log("id articolo", idArticolo);
+    console.log("JSON? ",{emailUtente, idArticolo,taglia,quantita})
+   
+    this.store.dispatch(createCarrello({emailUtente, idArticolo,taglia,quantita}))
   }
 }
