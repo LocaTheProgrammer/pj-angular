@@ -22,7 +22,7 @@ export class CarrelloTotalesEffects {
   
 
     retreiveAllCarrello(): Observable<Response> {
-        return this.http.retrieveGetCall<Response>("carrello/findAll");
+        return this.http.retrieveGetCall<Response>("carrelloTotale/findTotale");
     }
 
 
