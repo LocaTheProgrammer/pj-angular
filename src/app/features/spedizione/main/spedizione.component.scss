@@ -65,11 +65,8 @@ $button-border-color: #223e5f;
 		background: #000;
 	}
 	.previewHotProd {
-		width: 30%;
-		margin-top: 5%;
-		margin-bottom: -3%;
+		width: 50%;
 		padding: 15px;
-		
 		background-color: #70ADCC;
 	
 	}
@@ -90,13 +87,12 @@ $button-border-color: #223e5f;
 		background-color: #70ADCC;
 	}
 	
+	
 
 	.buttonScopri{
 		
 		display: inline-block;
-		margin-left: 20%;
-		padding-left: 2%;
-        padding-right: 1%;
+		padding: 15px;
 		margin-right: 5px;
 		height: 50px;
 		min-width: 100px;
@@ -187,24 +183,7 @@ $button-border-color: #223e5f;
 			padding: 10px 0;
 		}
 	}
-	
-
-
-
-    //css
-    .grid {
-        margin-top: 1% ;
-        display: grid;
-        margin-left: 7.8%;
-        grid-template-columns: 33% 33% 33%;
-        gap: 10px;
-        // grid-auto-rows: 100px;
-      }
-      
-    //   .grid > div {
-    //     background-color: lime;
-    //   }
-    .nome{
+	.nome{
         color: white;
         padding: 1%;
     }
@@ -213,66 +192,6 @@ $button-border-color: #223e5f;
 		font-style:italic;
 		
 	}
-
-    //select
-    .selectTaglia{
-        margin-top: 6%;
-        width: 22.3%;
-    }
-
-    .tagliaString{
-        margin-top: 6%;
-        color: white;
-        font-style: bold;
-        padding-right: 12%;
-    }
-	.divTaglie{
-        padding-top: 6%;
-    }
-    #quantita{
-        margin-left: -2.3%;
-    }
-	.detail{
-		text-align: center;
-		color: white;
-		font-weight: bold;
-		width:30%
-	}
-	.immagine{
-		padding-left: 12.5%;
-		width:30%
-	}
-	.carrelloPreview{
-		margin-top: 5%;
-		width: 90%;
-	}
-	th{
-		color: white;
-		font-size: x-large;
-	}
-	.riepilogo{
-		color: white;
-		margin-top: 2%;
-		margin-left: 10%;
-	}
-	.riepilogoAcquisti{
-		color: white;
-		margin-top: 1%;
-		margin-left: 10%;
-		margin-bottom: 0.5%;
-	}
-	.lineRiepilogo{
-		width: 20%;
-		margin-left: 10%;
-	}
-
-	.totale{
-		color: white;
-		background-color: #223e5f;
-		padding: 2%;
-		width: 110%;
-		
-	}
 	
-
+	
 }

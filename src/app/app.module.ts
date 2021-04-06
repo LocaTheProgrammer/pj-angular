@@ -14,6 +14,7 @@ import { CarrellosEffects } from './redux/carrello/carrello.effects';
 import { CarrelloTotalesEffects } from './redux/totale/totale.effects';
 import { UtenteEffects } from './redux/utente/utente.effects';
 import { SharedModule } from './shared/shared.module';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { SharedModule } from './shared/shared.module';
       CarrelloTotalesEffects
      ]
      ),
+    //  NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

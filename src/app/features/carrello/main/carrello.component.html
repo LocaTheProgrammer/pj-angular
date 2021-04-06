@@ -30,6 +30,18 @@
     <!-- class="hot_prods_table" -->
    
     <h1 class="riepilogo">Riepilogo Acquisti</h1>
+    <div class="riepilogoAcquisti">
+        <table>
+            <tr>
+                <td>
+                    <h2 class="totale">Totale: {{totale.result.totale}} €</h2>
+                </td>
+                <td>
+                    <button class="buttonScopri">PROCEDI AL CHECKOUT</button>
+                </td>
+            </tr>
+        </table>
+    </div>
    <hr class="lineRiepilogo">
     <table class="carrelloPreview">
         <th id="imgtitle">IMMAGINE</th>
@@ -42,15 +54,13 @@
             <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.nome}}</td>
             <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.quantita}} x {{car.prezzo}} €</td>
             <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.totale}} €</td>
-        
+            <td *ngIf="car.emailUtente==sessionEmail" class="detail"><button><img src="../assets/close.png" alt="rimuovi" (click)="rimuovi(car.id)"></button></td>
            
         </tr>
     </table>
 
-    <!-- <table>
-        <tr *ngFor="let carTot of carrelloTotale | async"><td>{{carTot.result.totale}}</td></tr>
-    </table>
-   
-    {{carrelloTotale}} -->
+  
+     
+  
     
 </div>

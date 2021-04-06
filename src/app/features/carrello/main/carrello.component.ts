@@ -16,20 +16,27 @@ import { CarrelloService } from '../service/carrello.service';
 })
 export class CarrelloComponent implements OnInit {
 
-  constructor(private store: Store, private carrelloService: CarrelloService,private router: Router) {
+  constructor(private store: Store, private carrelloService: CarrelloService,private router: Router, private http: HttpCommunicationsService) {
 
     this.carrelloService.retrieveAllCarrelli()
-    //this.carrelloService.retrieveTotale()
+   
   }
 
 
 
   sessionEmail:string
+  totale:any
   ngOnInit(): void {
     this.sessionEmail=sessionStorage.getItem('email')
     console.log("email di sessione: ",this.sessionEmail)
     
-   
+    this.getCarrelloTotale(this.sessionEmail).subscribe(cTot => {
+
+      this.totale = cTot
+     
+            
+    })
+
   }
 
   get carrelli(): Observable<Carrello[]> {
@@ -37,10 +44,18 @@ export class CarrelloComponent implements OnInit {
    
   }
   
-  // get carrelloTotale(): Observable<CarrelloTotale[]>{
-  //   return this.store.pipe(select(selectCarrelloTotales));
-  // }
+  
+  url: string
+  getCarrelloTotale(sessionEmail:string){
+    this.url='carrelloTotale/findTotale'
+    return this.http.retrievePostCall<CarrelloTotale>(this.url,sessionEmail).pipe()
+  }
 
+
+  rimuovi(id:string){
+    console.log("id: ",id)
+    this.carrelloService.rimuoviDalCarello(id.toString(),this.sessionEmail)
+  }
   
 
 

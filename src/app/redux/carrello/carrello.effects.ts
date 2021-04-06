@@ -27,8 +27,8 @@ export class CarrellosEffects {
     // }
 
 
-    deleteCarrello(id:string){
-        return this.http.retrievePostCall<Response>('carrello/delete',{id});
+    deleteCarrello(id:string,sessionEmail:string){
+        return this.http.retrievePostCall<Response>('carrello/delete',{id,sessionEmail});
     }
     
     
@@ -40,7 +40,8 @@ export class CarrellosEffects {
     deleteCarrello$: Observable<Action> = createEffect(() => this.actions$.pipe(
         ofType(deleteCarrello),
         switchMap((action) => this.deleteCarrello(
-            action.id).pipe(
+            action.id,
+            action.sessionEmail).pipe(
             map((response) => initCarrellos({ response })),
             tap(()=>this.router.navigateByUrl('/home'))
         ))
