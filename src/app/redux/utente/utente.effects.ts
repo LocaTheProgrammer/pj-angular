@@ -18,8 +18,8 @@ export class UtenteEffects {
     }
 
     
-    createUtente(email:string, ragioneSociale:string, partitaIva:string,sede:string,residenza:string,name:string): Observable<Response>{
-        return this.http.retrievePostCall<Response>('utente/create',{email,ragioneSociale,partitaIva,sede,residenza,name});
+    createUtente(email:string, nome:string, cognome:string, password:string, dataNascita:string): Observable<Response>{
+        return this.http.retrievePostCall<Response>('utente/create',{email, nome, cognome,password, dataNascita});
     }
 
     findUpdateUtente(id:string, ragioneSociale:string, partitaIva:string, email:string, sede: string, residenza: string, name:string){
@@ -66,14 +66,13 @@ export class UtenteEffects {
         ofType(createUtente),
         switchMap((action) => this.createUtente(
             action.email,
-            action.ragioneSociale,
-            action.partitaIva,
-            action.sede,
-            action.residenza,
-            action.name).pipe(
+            action.nome,
+            action.cognome,
+            action.password,
+            action.dataNascita).pipe(
             map((response) => initUtentes({ response }))
             // prova senza redirect
-            ,tap(()=>this.router.navigateByUrl('/redirectutente'))
+            ,tap(()=>this.router.navigateByUrl('/login'))
         ))
     ));
 

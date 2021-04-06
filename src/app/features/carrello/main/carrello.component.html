@@ -35,20 +35,22 @@
         <th id="imgtitle">IMMAGINE</th>
         <th>NOME</th>
         <th>PREZZO</th>
+        <th>TOTALE</th>
         <tr *ngFor="let car of carrelli | async">
             
             <td *ngIf="car.emailUtente==sessionEmail" class="immagine"> <img class="previewHotProd" src="{{car.foto}}"> </td>
             <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.nome}}</td>
             <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.quantita}} x {{car.prezzo}} €</td>
+            <td *ngIf="car.emailUtente==sessionEmail" class="detail">{{car.totale}} €</td>
         
            
         </tr>
     </table>
 
     <!-- <table>
-        <tr ><td *ngFor="carTot of carrelloTotale">{{carTot.totale}}</td></tr>
+        <tr *ngFor="let carTot of carrelloTotale | async"><td>{{carTot.result.totale}}</td></tr>
     </table>
-    -->
-    <!-- {{carrelloTotale}} -->
+   
+    {{carrelloTotale}} -->
     
 </div>

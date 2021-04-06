@@ -21,8 +21,8 @@ export class CarrelloTotalesEffects {
 
   
 
-    retreiveAllCarrello(): Observable<Response> {
-        console.log("find totale carrello tot")
+    retreiveTotale(): Observable<Response> {
+        console.log("find totale carrello totale")
         return this.http.retrieveGetCall<Response>("carrelloTotale/findTotale");
     }
 
@@ -31,7 +31,7 @@ export class CarrelloTotalesEffects {
     
     getTotlae$: Observable<Action> = createEffect(() => this.actions$.pipe(
         ofType(retrieveTotale),
-        switchMap(() => this.retreiveAllCarrello().pipe(
+        switchMap(() => this.retreiveTotale().pipe(
             map((response) => initCarrelloTotales({ response }))
         ))
     ));

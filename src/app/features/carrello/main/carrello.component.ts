@@ -28,7 +28,7 @@ export class CarrelloComponent implements OnInit {
   ngOnInit(): void {
     this.sessionEmail=sessionStorage.getItem('email')
     console.log("email di sessione: ",this.sessionEmail)
-
+    
    
   }
 
@@ -36,7 +36,7 @@ export class CarrelloComponent implements OnInit {
     return this.store.pipe(select(selectCarrellos));
    
   }
-
+  
   // get carrelloTotale(): Observable<CarrelloTotale[]>{
   //   return this.store.pipe(select(selectCarrelloTotales));
   // }
