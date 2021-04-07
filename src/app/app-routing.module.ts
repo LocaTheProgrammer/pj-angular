@@ -10,6 +10,8 @@ const routes: Routes = [{ path: 'login', loadChildren: () => import('./features/
                         { path: 'dettaglio', loadChildren: () => import('./features/dettaglio/dettaglio.module').then(m => m.DettaglioModule) },
                         { path: 'cart', loadChildren: () => import('./features/carrello/carrello.module').then(m => m.CarrelloModule) },
                         { path: 'spedizione', loadChildren: () => import('./features/spedizione/spedizione.module').then(m => m.SpedizioneModule) },
+                        { path: 'contattami', loadChildren: () => import('./features/contattami/contattami.module').then(m => m.ContattamiModule) },
+                        { path: '**', loadChildren: () => import('./features/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
                       ];
 
 @NgModule({

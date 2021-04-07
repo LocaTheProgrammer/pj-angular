@@ -46,7 +46,8 @@ $button-border-color: #223e5f;
 	.div1 {
 		grid-area: 1 / 2 / 2 / 4;
 		//padding-left: -15%;
-		margin-left: 33%;
+		margin-left: 10%;
+		margin-right: -20%;
 	}
 	.div2 {
 		grid-area: 1 / 5 / 2 / 6;
@@ -196,39 +197,40 @@ $button-border-color: #223e5f;
       $decor-color: #BDC3C7;
       $font: "proxima-nova", sans-serif;
       
-      *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        -webkit-transition: 0.2s ease-in-out;
-        -moz-transition: 0.2s ease-in-out;
-        -o-transition: 0.2s ease-in-out;
-        transition: 0.2s ease-in-out;
-        font-family: $font;
-        font-weight: 400;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        color: $primary-color;
-        &:focus{
-          outline: none;
-        }
-      }
+      // *{
+      //   margin: 0;
+      //   padding: 0;
+      //   box-sizing: border-box;
+      //   -webkit-transition: 0.2s ease-in-out;
+      //   -moz-transition: 0.2s ease-in-out;
+      //   -o-transition: 0.2s ease-in-out;
+      //   transition: 0.2s ease-in-out;
+      //   font-family: $font;
+      //   font-weight: 400;
+      //   -webkit-font-smoothing: antialiased;
+      //   -moz-osx-font-smoothing: grayscale;
+      //   color: $primary-color;
+      //   &:focus{
+      //     outline: none;
+      //   }
+      // }
       
-      body{
-        background-color: #e2fbf5;
-      }
+      // body{
+      //   background-color: #e2fbf5;
+      // }
       
       #wrapper{
-         position: absolute;
-         top: 50%;
+        // position: absolute;
+         padding-top: 20%;
          margin-top: -240px;
          left: 0;
          width: 100%;
       }
       
-      #container{
+      #containerShipping{
         width: 720px;
         height: 720px;
+        color: white;
         margin: 0 auto;
         box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.2);
         @include border-radius(5px);

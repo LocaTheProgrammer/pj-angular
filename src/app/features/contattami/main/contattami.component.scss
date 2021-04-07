@@ -1,8 +1,8 @@
 @media (min-width: 575px) {
 	@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700,900');
 	@import "~bootstrap/dist/css/bootstrap.css";
-$button-bg-color: rgba(0, 0, 0, 0.452);
-$button-border-color: #223e5f;
+    $button-bg-color: rgba(0, 0, 0, 0.452);
+    $button-border-color: #223e5f;
 
 	.container {
 		max-width: 100%;
@@ -88,6 +88,7 @@ $button-border-color: #223e5f;
 		background-color: #70ADCC;
 	}
 	
+	
 
 	.buttonScopri{
 		
@@ -99,7 +100,7 @@ $button-border-color: #223e5f;
 		background: $button-bg-color;
 		border: none;
 		outline: none;
-		color: white;
+		color: whitesmoke;
 		font-family: inherit;
 		font-weight: 400;
 		font-size: 20px;
@@ -183,30 +184,79 @@ $button-border-color: #223e5f;
 			padding: 10px 0;
 		}
 	}
-	
-
-
-
-    //css
-    .grid {
-        margin-top: 7% ;
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        gap: 10px;
-        // grid-auto-rows: 100px;
-      }
-      
-    //   .grid > div {
-    //     background-color: lime;
-    //   }
-    .nome{
-        color: white;
+	.nome{
+        color: whitesmoke;
         padding: 1%;
     }
 	.sessionEmail{
-		color: white;
+		color: whitesmoke;
 		font-style:italic;
 		
 	}
-	
+	//foto
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 9% 1fr 20%;
+        gap: 3% 0px;
+        grid-template-areas:
+          ". introduzione introduzione ."
+          ". fotoGiulia svolgimento ."
+          ". conclusione conclusione .";
+      }
+      
+      .fotoGiulia { 
+        grid-area: fotoGiulia;
+        margin-top: 13%;
+        
+       
+    }
+      
+      .introduzione { grid-area: introduzione;
+        color: whitesmoke;
+        font-weight: bold;
+        margin-top: 5%;
+    }
+      
+      .svolgimento { 
+          text-align: justify;
+        color: whitesmoke;
+        grid-area: svolgimento;
+        margin-top: 25%;
+        font-size: 1.1em;
+    }
+      
+      .conclusione { grid-area: conclusione;
+        color: whitesmoke;
+        font-size: 1.1em;
+        margin-bottom: 20%;
+     }
+      
+
+      #giulia{
+        width: 80%; 
+      }
+
+      
+      .emailContact{
+          text-align: center;
+          color: whitesmoke;
+          margin-left: 25%;
+          margin-right: 25%;
+          
+          padding-top: 5%;
+          padding-bottom: 5%;
+          background-color: #223e5f;
+      }
+      //email
+      #inputMail{
+          
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 }
