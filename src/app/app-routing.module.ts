@@ -11,6 +11,7 @@ const routes: Routes = [{ path: 'login', loadChildren: () => import('./features/
                         { path: 'cart', loadChildren: () => import('./features/carrello/carrello.module').then(m => m.CarrelloModule) },
                         { path: 'spedizione', loadChildren: () => import('./features/spedizione/spedizione.module').then(m => m.SpedizioneModule) },
                         { path: 'contattami', loadChildren: () => import('./features/contattami/contattami.module').then(m => m.ContattamiModule) },
+                        { path: 'risultatospedizione', loadChildren: () => import('./features/risultatospedizione/risultatospedizione.module').then(m => m.RisultatospedizioneModule) },
                         { path: '**', loadChildren: () => import('./features/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
                       ];
 

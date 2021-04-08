@@ -28,6 +28,10 @@ export class CarrelloComponent implements OnInit {
   totale:any
   ngOnInit(): void {
     this.sessionEmail=sessionStorage.getItem('email')
+    if(this.sessionEmail==undefined){
+      this.router.navigateByUrl("/login")
+    }
+
     console.log("email di sessione: ",this.sessionEmail)
     
     this.getCarrelloTotale(this.sessionEmail).subscribe(cTot => {
@@ -57,6 +61,10 @@ export class CarrelloComponent implements OnInit {
     this.carrelloService.rimuoviDalCarello(id.toString(),this.sessionEmail)
   }
   
+  spedizione(){
+    console.log(this.sessionEmail)
+    this.router.navigateByUrl("/spedizione")
+  }
 
 
   

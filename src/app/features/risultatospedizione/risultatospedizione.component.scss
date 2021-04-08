@@ -1,0 +1,534 @@
+@media (min-width: 575px) {
+	@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700,900');
+	@import "~bootstrap/dist/css/bootstrap.css";
+$button-bg-color: rgba(0, 0, 0, 0.452);
+$button-border-color: #223e5f;
+
+	.container {
+		max-width: 100%;
+	}
+	.banner {
+		width: 100%;
+		// background-repeat:no-repeat;
+		// background-size:cover;
+		// background-attachment:fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.banner section,
+	.banner a {
+		color: #fff;
+		margin: 0 10px;
+	}
+	.logo {
+		width: 100%;
+		height: 150px;
+		margin-left: 14%;
+		overflow: hidden;
+	}
+	.cartString {
+		padding-left: 21%;
+		margin-top: -17%;
+	
+	}
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+	}
+	.div1 {
+		grid-area: 1 / 2 / 2 / 4;
+		//padding-left: -15%;
+		margin-left: 10%;
+		margin-right: -20%;
+	}
+	.div2 {
+		grid-area: 1 / 5 / 2 / 6;
+		margin-top: 6%;
+		padding-top: 6%;
+		margin-left:30%;
+		//background-color: #70ADCC;
+		border-radius: 4%;
+		margin-right: 25%;
+		
+	}
+
+	.bottomStripe {
+		width: 100%;
+		height: 5px;
+		background: #000;
+	}
+	.previewHotProd {
+		width: 50%;
+		padding: 15px;
+		background-color: #70ADCC;
+	
+	}
+	.hot_prods_table{
+		text-align: center; 
+		background-color: #22405fb2;
+		margin-top: 6%;
+		//margin-left: 11%;
+		padding-left: -1%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+		margin-left: 8%;
+		margin-right: 8%;
+		
+	}
+	.hot_prod{
+		border-radius: 2%;
+		background-color: #70ADCC;
+	}
+	
+
+	.buttonScopri{
+		
+		display: inline-block;
+		padding: 15px;
+		margin-right: 5px;
+		height: 50px;
+		min-width: 100px;
+		background: $button-bg-color;
+		border: none;
+		outline: none;
+		color: white;
+		font-family: inherit;
+		font-weight: 400;
+		font-size: 20px;
+		border-radius: 3px;
+		box-shadow: 0 5px 0px darken($button-bg-color,0%);
+		border-bottom: 2px solid darken($button-bg-color,3%);
+		
+		&:hover{
+			cursor: pointer;
+		  background: darken($button-bg-color,5%);
+		  box-shadow: 0 4px 1px darken($button-bg-color,5%);
+		  border-bottom: 2px solid darken($button-bg-color,8%);
+		  transition: all 0.1s ease-in;
+		}
+		
+		&:active{
+		  transform:translateY(4px);
+		  border-bottom-width: 2px;
+		  box-shadow: none;
+		}
+	  }
+	//navbar
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: sans-serif;
+	}
+	body{
+		background-color: #333;
+	}
+	nav{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 2%;
+		margin-left: 10%;
+		width: 80%;
+		padding: 20px;
+		background-color: #d0bebe17;
+		border-radius: 10px;
+		
+	}
+	nav h1{
+		text-transform: uppercase;
+		color:#fff;
+	}
+	nav ul li{
+		display: inline-block;
+		list-style: none;
+		margin: 0 10px;
+	}
+	nav ul li a{
+		text-decoration: none;
+		color:rgba(255, 255, 255, .5);
+		position: relative;
+		display: inline-block;
+	}
+	a::before{
+		content: attr(data-text);
+		color:#fff;
+		position: absolute;
+		left: 0;
+		top: 0%;
+		width: 0%;
+		white-space: nowrap;
+		overflow: hidden;
+		transition: .5s;
+		border-bottom: 3px solid rgba(0, 0, 0, 0.452);
+	
+	}
+	a:hover::before{
+		width: 100%;
+	}
+	@media(max-width:700px){
+		nav{
+			display: block;
+			text-align: center;
+		}
+		nav ul li{
+			display: block;
+			padding: 10px 0;
+		}
+	}
+	
+    //shipping
+    @mixin border-radius($radius) {
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+        border-radius: $radius;
+      }
+      
+      $primary-color: #6C7A89;
+      $secondary-color: #3E6FAB;
+      $decor-color: #BDC3C7;
+      $font: "proxima-nova", sans-serif;
+      
+      // *{
+      //   margin: 0;
+      //   padding: 0;
+      //   box-sizing: border-box;
+      //   -webkit-transition: 0.2s ease-in-out;
+      //   -moz-transition: 0.2s ease-in-out;
+      //   -o-transition: 0.2s ease-in-out;
+      //   transition: 0.2s ease-in-out;
+      //   font-family: $font;
+      //   font-weight: 400;
+      //   -webkit-font-smoothing: antialiased;
+      //   -moz-osx-font-smoothing: grayscale;
+      //   color: $primary-color;
+      //   &:focus{
+      //     outline: none;
+      //   }
+      // }
+      
+      // body{
+      //   background-color: #e2fbf5;
+      // }
+      
+      #wrapper{
+        // position: absolute;
+         padding-top: 20%;
+         margin-top: -240px;
+         left: 0;
+         width: 100%;
+      }
+      
+      #containerShipping{
+        width: 720px;
+        height: 720px;
+        color: white;
+        margin: 0 auto;
+        box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.2);
+        @include border-radius(5px);
+        overflow: hidden;
+        background-color:#223e5f; 
+        // background: rgb(179,190,173);
+        // background: -moz-linear-gradient(45deg, rgba(179,190,173,1) 0%, rgba(223,229,215,1) 60%, rgba(252,255,244,1) 100%);
+        // background: -webkit-linear-gradient(45deg, rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%);
+        // background: linear-gradient(45deg, rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%); 
+      }
+      
+      #info{
+        width: 52%;
+        height: 480px;
+        float: left;
+        
+        background-color:#223e5f; 
+        #product{
+          width: 500px;
+          margin: -50px 0 -85px -65px;
+        }
+        p{
+          width: 100%;
+          text-align: center;
+          line-height: 1.5em;
+          letter-spacing: 1px;
+        }
+        #price{
+          width: 50%;
+          margin: 0 auto;
+          letter-spacing: 1px;
+          h2{
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            color: #000;
+            padding-top: 10px;
+          }
+        }
+      }
+      
+      #payment{
+        width: 40%;
+        //float: left;
+        margin-left: 35%;
+        padding: 95px 50px 25px 0;
+      }
+      
+      .checkout{
+        width: 100%;
+        
+        input{
+          margin-bottom: 15px;
+        }
+        label{
+          float: left;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-size: 0.6em;
+          padding: 0 0 5px 10px;
+        }
+        #cvc-label{
+          margin-left: 25px;
+        }
+        .card{
+          width: 29%;
+          margin: 0 10% 25px 10%;
+          border: none;
+          background: none;
+          height: 50px;
+          cursor: pointer;
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+          &:focus{
+            -webkit-filter: none;
+            filter: none;
+          }
+        }
+        #visa{
+          background-image: url("http://enwaara.se/codepen/visa.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+        #mastercard{
+          background-image: url("http://enwaara.se/codepen/mastercard.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 118%;
+        }
+        #cardnumber, #cardholder, #cvc{
+          width: 100%;
+          background: none;
+          border: 1px solid $primary-color;
+          padding: 8px 19px;
+          @include border-radius(50px);
+          letter-spacing: 1px;
+          &:focus {
+            border: 1px solid $secondary-color;
+          }
+        }
+        ::-webkit-input-placeholder {
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 0.9em;
+          color: $decor-color;
+        }
+        #cardnumber{
+          letter-spacing: 3px;
+          &::-webkit-input-placeholder {
+            font-size: 1em;
+          }
+        }
+        #left{
+          width: 41%;
+          border: 1px solid $primary-color;
+          @include border-radius(50px);
+          overflow: hidden;
+          padding: 3px 5px;
+          float: left;
+          #month, #year{
+            background: none;
+            border: none;
+            padding: 5px;
+            @include border-radius(5px);
+            float: left;
+            font-size: 0.8em;
+            letter-spacing: 3px;
+            color: $decor-color;
+            -webkit-appearance: none;
+            -moz-appearance:    none;
+            appearance:         none;
+            option{
+              background: #ECECEC;
+            }
+          }
+          p{
+            float: left;
+            padding-top: 2px;
+            font-size: 1.2em;
+            color: $decor-color;
+            letter-spacing: 3px;
+          }
+        }
+        #cvc{
+          width: 48%;
+          float: left;
+          margin-left: 11%;
+        }
+        .btn{
+          background: $secondary-color;
+          border: none;
+          width: 100%;
+          padding: 12px 10px 10px 10px;
+          @include border-radius(50px);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 400;
+          color: #ECECEC;
+          cursor: pointer;
+          &:hover{
+            background:#709fda;
+          }
+        }
+      }
+
+      //animazione
+      // HTML font size can define checkbox size
+// html,
+// body {
+//   font-size: 24px;
+// }
+
+// Sample container
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Main CSS
+.check-container {
+    margin-top: -30%;
+  width: 6.25rem;
+  height: 7.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .check-background {
+    width: 100%;
+    height: calc(100% - 1.25rem);
+    background: linear-gradient(to bottom right, #5de593, #41d67c);
+    box-shadow: 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset,
+      0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+    transform: scale(0.84);
+    border-radius: 50%;
+    animation: animateContainer 0.75s ease-out forwards 0.75s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
+    svg {
+      width: 65%;
+      transform: translateY(0.25rem);
+      stroke-dasharray: 80;
+      stroke-dashoffset: 80;
+      animation: animateCheck 0.35s forwards 1.25s ease-out;
+    }
+  }
+
+  .check-shadow {
+    bottom: calc(-15% - 5px);
+    left: 0;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(73, 218, 131, 1), transparent);
+    animation: animateShadow 0.75s ease-out forwards 0.75s;
+  }
+}
+
+@keyframes animateContainer {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    box-shadow: 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset,
+      0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(0.9);
+    box-shadow: 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset,
+      0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+  }
+  43.75% {
+    transform: scale(1.15);
+    box-shadow: 0px 0px 0px 43.334px rgba(255, 255, 255, 0.25) inset,
+      0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+  }
+  62.5% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset,
+      0px 0px 0px 21.667px rgba(255, 255, 255, 0.25) inset;
+  }
+  81.25% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset,
+      0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset,
+      0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset;
+  }
+}
+
+@keyframes animateCheck {
+  from {
+    stroke-dashoffset: 80;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animateShadow {
+  0% {
+    opacity: 0;
+    width: 100%;
+    height: 15%;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  43.75% {
+    width: 40%;
+    height: 7%;
+    opacity: 0.35;
+  }
+  100% {
+    width: 85%;
+    height: 15%;
+    opacity: 0.25;
+  }
+}
+.buoneNotizie{
+    color: whitesmoke;
+    margin-left: 27%;
+    margin-top: 5%;
+}
+.buoneNotizie2{
+    color: whitesmoke;
+    margin-left: 47.4%;
+    
+
+}
+	
+}
