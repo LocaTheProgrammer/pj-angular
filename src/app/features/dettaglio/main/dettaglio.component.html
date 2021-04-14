@@ -46,7 +46,7 @@
             <form [formGroup]="aggiungiAlCarrelloForm" (ngSubmit)="aggiungiAlCarrello()">
                 <div class="divTaglie">
                     <ng-container *ngFor="let mag of magazzino | async">
-                        <span class="preorderclass" *ngIf="mag.id==id&&mag.disponibilita>0"> <b>disponibilità: solo {{mag.disponibilita}}</b>   <br></span>
+                        <span class="preorderclass" *ngIf="mag.id==id&&mag.disponibilita>0"> <b>Disponibilità: solo {{mag.disponibilita}}</b>   <br></span>
                     </ng-container>    
                     <span class="tagliaString"> <b>Seleziona la taglia:</b>  </span>
                     <select formControlName="taglia" class="selectTaglia">
