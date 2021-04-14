@@ -6,6 +6,7 @@ import { ArticoloHotState, articolosHotReducer, articolosReducer, ArticoloState 
 import { carrelloReducer, CarrelloState } from './carrello/carrello.reducers';
 import { carrelloTotaleReducer, CarrelloTotaleState } from './totale/totale.reducers';
 import { spedizionesReducer, SpedizioneState } from './spedizione/spedizione.reducers';
+import { magazzinosReducer, MagazzinoState } from './magazzino/magazzino.reducers';
 
 
 
@@ -17,6 +18,8 @@ export interface AppState{
     carrelloState:CarrelloState;
     carrelloTotaleState:CarrelloTotaleState;
     spedizioneState:SpedizioneState;
+    magazzinoState:MagazzinoState;
+
    
 }
 
@@ -27,7 +30,8 @@ export const reducers: ActionReducerMap<AppState> = {
     articolosState:articolosReducer,
     carrelloState:carrelloReducer,
     carrelloTotaleState:carrelloTotaleReducer,
-    spedizioneState:spedizionesReducer
+    spedizioneState:spedizionesReducer,
+    magazzinoState:magazzinosReducer
     
    
 }

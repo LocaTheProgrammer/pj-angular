@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Articolo } from 'src/app/core/model/Articolo.interface';
@@ -15,7 +15,7 @@ import { DettaglioServiceService } from '../service/dettaglio-service.service';
 })
 export class DettaglioComponent implements OnInit {
 
-  constructor(private store: Store, private fb:FormBuilder, private route: ActivatedRoute,private homeService: HomeService,private dettaglioService:DettaglioServiceService) { }
+  constructor(private store: Store, private fb:FormBuilder, private route: ActivatedRoute,private router: Router, private homeService: HomeService,private dettaglioService:DettaglioServiceService) { }
   id:string
   sessionEmail:any
 
@@ -46,8 +46,12 @@ export class DettaglioComponent implements OnInit {
     console.log("sessionEmail: ", this.sessionEmail)
     console.log("taglia: ",this.aggiungiAlCarrelloForm.value.taglia)
     console.log("quantita: ",this.aggiungiAlCarrelloForm.value.quantita)
-    
-    this.dettaglioService.aggiungiAlCarrello(this.sessionEmail,this.id,this.aggiungiAlCarrelloForm.value.taglia,this.aggiungiAlCarrelloForm.value.quantita)
+    if(this.sessionEmail!=undefined){
+      this.dettaglioService.aggiungiAlCarrello(this.sessionEmail,this.id,this.aggiungiAlCarrelloForm.value.taglia,this.aggiungiAlCarrelloForm.value.quantita)
+    }
+    else{
+      this.router.navigateByUrl('login');
+    }
   }
 
 
