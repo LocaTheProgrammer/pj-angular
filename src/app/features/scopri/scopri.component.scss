@@ -1,8 +1,8 @@
 @media (min-width: 575px) {
 	@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700,900');
 	@import "~bootstrap/dist/css/bootstrap.css";
-$button-bg-color: rgba(0, 0, 0, 0.452);
-$button-border-color: #223e5f;
+    $button-bg-color: rgba(0, 0, 0, 0.452);
+    $button-border-color: #223e5f;
 
 	.container {
 		max-width: 100%;
@@ -46,7 +46,8 @@ $button-border-color: #223e5f;
 	.div1 {
 		grid-area: 1 / 2 / 2 / 4;
 		//padding-left: -15%;
-		margin-left: 33%;
+		margin-left: 10%;
+		margin-right: -20%;
 	}
 	.div2 {
 		grid-area: 1 / 5 / 2 / 6;
@@ -65,7 +66,7 @@ $button-border-color: #223e5f;
 		background: #000;
 	}
 	.previewHotProd {
-		width: 70%;
+		width: 50%;
 		padding: 15px;
 		background-color: #70ADCC;
 	
@@ -87,19 +88,19 @@ $button-border-color: #223e5f;
 		background-color: #70ADCC;
 	}
 	
+	
 
 	.buttonScopri{
 		
 		display: inline-block;
-		padding-left: 11%;
-        padding-right: 11%;
+		padding: 15px;
 		margin-right: 5px;
 		height: 50px;
 		min-width: 100px;
 		background: $button-bg-color;
 		border: none;
 		outline: none;
-		color: white;
+		color: whitesmoke;
 		font-family: inherit;
 		font-weight: 400;
 		font-size: 20px;
@@ -183,63 +184,79 @@ $button-border-color: #223e5f;
 			padding: 10px 0;
 		}
 	}
-	
-
-
-
-    //css
-    .grid {
-        margin-top: 1% ;
-        display: grid;
-        margin-left: 7.8%;
-        grid-template-columns: 33% 33% 33%;
-        gap: 10px;
-        // grid-auto-rows: 100px;
-      }
-      
-    //   .grid > div {
-    //     background-color: lime;
-    //   }
-    .nome{
-        color: white;
+	.nome{
+        color: whitesmoke;
         padding: 1%;
     }
 	.sessionEmail{
-		color: white;
+		color: whitesmoke;
 		font-style:italic;
 		
 	}
-
-    //select
-    .selectTaglia{
-        margin-top: 6%;
-        width: 22.3%;
+	//foto
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 9% 1fr 20%;
+        gap: 3% 0px;
+        grid-template-areas:
+          ". introduzione introduzione ."
+          ". fotoGiulia svolgimento ."
+          ". conclusione conclusione .";
+      }
+      
+      .fotoGiulia { 
+        grid-area: fotoGiulia;
+        margin-top: 13%;
+        
+       
     }
-
-    .tagliaString{
-        margin-top: 6%;
-        color: white;
-        font-style: bold;
-        padding-right: 12%;
+      
+      .introduzione { grid-area: introduzione;
+        color: whitesmoke;
+        font-weight: bold;
+        margin-top: 5%;
     }
-	.divTaglie{
-        padding-top: 6%;
+      
+      .svolgimento { 
+          text-align: justify;
+        color: whitesmoke;
+        grid-area: svolgimento;
+        margin-top: 25%;
+        font-size: 1.1em;
     }
-    #quantita{
-        margin-left: -2.3%;
-    }
-	.preorderclass{
-		color: white;
-		font-size: 1.1em;
-	
-	}
+      
+      .conclusione { grid-area: conclusione;
+        color: whitesmoke;
+        font-size: 1.1em;
+        margin-bottom: 20%;
+     }
+      
 
-	a{
-		text-decoration: underline;
-		color: white;
-		font-size: 1.1em;
-	}
-	
+      #giulia{
+        width: 80%; 
+      }
 
-	
+      
+      .emailContact{
+          text-align: center;
+          color: whitesmoke;
+          margin-left: 25%;
+          margin-right: 25%;
+          
+          padding-top: 5%;
+          padding-bottom: 5%;
+          background-color: #223e5f;
+      }
+      //email
+      #inputMail{
+          
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 }

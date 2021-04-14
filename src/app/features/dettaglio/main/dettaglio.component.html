@@ -37,6 +37,9 @@
                     <img class="hot_prod" class="previewHotProd" src="{{art.foto}}" alt=""> <br>
                     <span  class="nome text-center"><h3>{{art.nome}}</h3></span><br>
                     <span  class="nome text-center"><h1>{{art.prezzo}}€</h1></span><br>
+                    <ng-container *ngFor="let mag of magazzino | async">
+                        <span class="preorderclass" *ngIf="mag.idArticolo==id&&mag.disponibilita==0"> Questo articolo è un preorder, <a href="scopri">scopri</a> perchè! </span>
+                    </ng-container>    
                 </div>
           </ng-container>
           <ng-container *ngIf="art.id==id" >

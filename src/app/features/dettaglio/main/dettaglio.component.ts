@@ -4,7 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Articolo } from 'src/app/core/model/Articolo.interface';
+import { Magazzino } from 'src/app/core/model/Magazzino.interface';
 import { selectArticolos } from 'src/app/redux/articolo';
+import { selectMagazzinos } from 'src/app/redux/magazzino';
 import { HomeService } from '../../home/service/home.service';
 import { DettaglioServiceService } from '../service/dettaglio-service.service';
 
@@ -15,7 +17,9 @@ import { DettaglioServiceService } from '../service/dettaglio-service.service';
 })
 export class DettaglioComponent implements OnInit {
 
-  constructor(private store: Store, private fb:FormBuilder, private route: ActivatedRoute,private router: Router, private homeService: HomeService,private dettaglioService:DettaglioServiceService) { }
+  constructor(private store: Store, private fb:FormBuilder, private route: ActivatedRoute,private router: Router, private homeService: HomeService,private dettaglioService:DettaglioServiceService) {
+    this.dettaglioService.retreiveAllMagazzinos();
+   }
   id:string
   sessionEmail:any
 
@@ -39,6 +43,10 @@ export class DettaglioComponent implements OnInit {
 
   get articoli(): Observable<Articolo[]> {
     return this.store.pipe(select(selectArticolos));
+   
+  }
+  get magazzino(): Observable<Magazzino[]> {
+    return this.store.pipe(select(selectMagazzinos));
    
   }
 

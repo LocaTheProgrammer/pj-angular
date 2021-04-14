@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 import { reducers } from './redux';
 import { ArticolosEffects } from './redux/articolo/product.effects';
 import { CarrellosEffects } from './redux/carrello/carrello.effects';
+import { MagazzinoEffects } from './redux/magazzino/magazzino.effects';
 import { SpedizioneEffects } from './redux/spedizione/spedizione.effects';
 import { CarrelloTotalesEffects } from './redux/totale/totale.effects';
 import { UtenteEffects } from './redux/utente/utente.effects';
@@ -35,7 +36,8 @@ import { SharedModule } from './shared/shared.module';
       UtenteEffects,
       CarrellosEffects,
       CarrelloTotalesEffects,
-      SpedizioneEffects
+      SpedizioneEffects,
+      MagazzinoEffects
      ]
      ),
     //  NgbModule,

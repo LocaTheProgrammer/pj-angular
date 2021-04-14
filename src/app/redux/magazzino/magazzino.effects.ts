@@ -14,6 +14,7 @@ export class MagazzinoEffects {
     constructor(private actions$: Actions, private http: HttpCommunicationsService, private router: Router) { }
 
     retreiveAllMagazzinos(): Observable<Response> {
+        console.log("find all magazzino")
         return this.http.retrieveGetCall<Response>("magazzino/findAll");
     }
 
