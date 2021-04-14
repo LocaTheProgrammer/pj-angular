@@ -38,13 +38,16 @@
                     <span  class="nome text-center"><h3>{{art.nome}}</h3></span><br>
                     <span  class="nome text-center"><h1>{{art.prezzo}}€</h1></span><br>
                     <ng-container *ngFor="let mag of magazzino | async">
-                        <span class="preorderclass" *ngIf="mag.idArticolo==id&&mag.disponibilita==0"> Questo articolo è un preorder, <a href="scopri">scopri</a> perchè! </span>
+                        <span class="preorderclass" *ngIf="mag.id==id&&mag.disponibilita==0"> Questo articolo è un preorder, <a href="scopri">scopri</a> perchè! </span>
                     </ng-container>    
                 </div>
           </ng-container>
           <ng-container *ngIf="art.id==id" >
             <form [formGroup]="aggiungiAlCarrelloForm" (ngSubmit)="aggiungiAlCarrello()">
                 <div class="divTaglie">
+                    <ng-container *ngFor="let mag of magazzino | async">
+                        <span class="preorderclass" *ngIf="mag.id==id&&mag.disponibilita>0"> <b>disponibilità: solo {{mag.disponibilita}}</b>   <br></span>
+                    </ng-container>    
                     <span class="tagliaString"> <b>Seleziona la taglia:</b>  </span>
                     <select formControlName="taglia" class="selectTaglia">
                         <option value="S">S</option>
