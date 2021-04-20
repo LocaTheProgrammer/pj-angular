@@ -1,0 +1,49 @@
+
+
+  <div class="parent">
+    <div class="div1"><a href="home"><img class="logo" src="../assets/logokarasho.jpeg" alt=""></a></div>
+   
+</div>
+
+<hr>
+
+
+<div class="container">
+       
+  
+
+    <h1>PROFILO</h1>
+    <ng-container *ngFor="let u of utenti| async">
+        <ng-container *ngIf="u.email==sessionEmail">
+            <form [formGroup]="updateUtenteForm" (ngSubmit)="updateUtente()">
+                <div class="wrapper">
+                    <div class="group">
+                        <input class="fields" type="text" name="nome" id="nome" placeholder="Nome" formControlName="nome" placeholder="{{u.nome}}">
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="text" name="Cognome" id="Cognome" placeholder="Cognome" formControlName="cognome" placeholder="{{u.cognome}}">
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="date" name="Data di Nascita" id="dataNascita" placeholder="" formControlName="data" placeholder="{{u.dataNascita}}">
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="text" name="email" id="email" placeholder="email" formControlName="email" placeholder="{{u.email}}">
+                    </div>
+              
+                </div>
+        
+                <div class="wrapper">
+                
+                    <div class="group">
+                        <input class="fields" type="password" name="password" id="password" placeholder="password" formControlName="password">
+                    </div>
+                </div>
+                <button id="submitButton" class="button" type="submit">UPDATE</button>
+               
+            </form>
+            <a class="back_home" href="home">Torna alla Home</a>
+        </ng-container>
+
+    </ng-container>
+    
+</div>

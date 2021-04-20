@@ -22,8 +22,8 @@ export class UtenteEffects {
         return this.http.retrievePostCall<Response>('utente/create',{email, nome, cognome,password, dataNascita});
     }
 
-    findUpdateUtente(id:string, ragioneSociale:string, partitaIva:string, email:string, sede: string, residenza: string, name:string){
-        return this.http.retrievePostCall<Response>('utente/update',{id, ragioneSociale, partitaIva,email,sede,residenza,name});
+    findUpdateUtente(email:string, nome:string, cognome:string, password:string, dataNascita:string){
+        return this.http.retrievePostCall<Response>('utente/update',{email, nome, cognome,password, dataNascita});
     }
 
     deleteUtente(id: string): Observable<Response>{
@@ -34,15 +34,13 @@ export class UtenteEffects {
     findUpdateUtente$: Observable<Action> = createEffect(() => this.actions$.pipe(
         ofType(updateUtente),
         switchMap((action) => this.findUpdateUtente(
-            action.id,
-            action.ragioneSociale,
-            action.partitaIva,
             action.email,
-            action.sede,
-            action.residenza,
-            action.name).pipe(
+            action.nome,
+            action.cognome,
+            action.password,
+            action.dataNascita).pipe(
             map((response) => initUtentes({ response }))
-            ,tap(()=>this.router.navigateByUrl('/redirectutente'))
+            ,tap(()=>this.router.navigateByUrl('/home'))
         ))
     ));
 

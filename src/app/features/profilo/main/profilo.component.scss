@@ -1,0 +1,136 @@
+@media (min-width: 575px) {
+    *,
+    :before,
+    :after {
+      box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #100e17;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      opacity: 40%;
+    }
+    
+    h1 {
+      max-width:100%;
+       height:auto;
+      text-align: center;
+    }
+    
+    /* Search Bar */
+    form {
+      max-width:100%;
+       height:auto;
+      width: 320px;
+      margin: 45px auto;
+    }
+    
+    .group {
+      position: relative;
+      margin: auto;
+      margin: 45px 0;
+    }
+    
+    textarea, input {
+      resize: none;
+      margin: auto;
+    }
+    
+    input,
+    textarea {
+      max-width:100%;
+       height:auto;
+        margin: auto;
+      background: none;
+      color: #c6c6c6;
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 320px;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #c6c6c6;
+    }
+    input:focus,
+    textarea:focus {
+      outline: none;
+      margin: auto;
+    }
+    input:focus ~ .bar:before,
+    textarea:focus ~ .bar:before {
+      width: 320px;
+      margin: auto;
+    }
+    
+    .bar {
+        margin: auto;
+      position: relative;
+      display: block;
+      width: 320px;
+    }
+    .bar:before {
+      content: "";
+      margin: auto;
+      height: 2px;
+      width: 0;
+      bottom: 0px;
+      position: absolute;
+      background: #fff;
+      transition: 300ms ease all;
+      left: 0%;
+    }
+    
+    .container{
+      max-width:100%;
+       height:auto;
+        margin: auto;
+        padding: 2%;
+        margin-top: 5%;
+        width: 20%;
+        height: 120%;
+        background-color: #70ADCC;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        border-radius: 1%;
+    }
+    
+    #submitButton{
+      max-width:100%;
+       height:auto;
+        padding-left: 31.9%;
+        padding-right: 40%;
+    }
+    
+    .banner {
+      width: 100%;
+      // background-repeat:no-repeat;
+      // background-size:cover;
+      // background-attachment:fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .banner section,
+    .banner a {
+      color: #fff;
+      margin: 0 10px;
+    }
+    .logo {
+      margin-left: 36%;
+      width: 30%;
+      height: 150px;
+      overflow: hidden;
+    }
+    .back_home{
+      margin-top: 30%;
+      margin-left: 34%;
+    }
+    }

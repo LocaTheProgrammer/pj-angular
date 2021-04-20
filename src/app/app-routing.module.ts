@@ -13,6 +13,7 @@ const routes: Routes = [{ path: 'login', loadChildren: () => import('./features/
                         { path: 'contattami', loadChildren: () => import('./features/contattami/contattami.module').then(m => m.ContattamiModule) },
                         { path: 'risultatospedizione', loadChildren: () => import('./features/risultatospedizione/risultatospedizione.module').then(m => m.RisultatospedizioneModule) },
                         { path: 'scopri', loadChildren: () => import('./features/scopri/scopri.module').then(m => m.ScopriModule) },
+                        { path: 'profilo', loadChildren: () => import('./features/profilo/profilo.module').then(m => m.ProfiloModule) },
                         { path: '**', loadChildren: () => import('./features/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
                       ];
 
